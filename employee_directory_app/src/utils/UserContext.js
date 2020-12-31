@@ -2,7 +2,8 @@ import React from "react";
 
 const UserContext = React.createContext({
   user: {},
-  users: []
+  users: [],
+  createTable: () => {}
 });
 
 export default UserContext;

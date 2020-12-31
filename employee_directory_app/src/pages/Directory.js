@@ -1,4 +1,3 @@
-// import EmployeeDirectory from "./components/EmployeeDirectory";
 import React, { useEffect, useState } from "react";
 import UserContext from "../utils/UserContext";
 import API from "../utils/API";
@@ -8,13 +7,13 @@ import Table from "../components/Table";
 function Directory() {
     const [users, setUsers] = useState([]);
     const [user, setUser] = useState({});
-    const [userIndex, setUserIndex] = useState(0);
+    // const [userIndex, setUserIndex] = useState(0);
 
     useEffect(() => {
-          loadUsers();
-      }, []);
+        loadUsers();
+    });
 
-    const loadUsers = () => {
+    function loadUsers() {
         API.getUsers()
             .then(users => {
                 setUsers(users);

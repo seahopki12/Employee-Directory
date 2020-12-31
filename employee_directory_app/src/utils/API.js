@@ -9,7 +9,6 @@ export default {
         .get("https://api.github.com/orgs/github/public_members")
         .then(res => {
           const users = res.data;
-          console.log(res.data);
           const results = users.map(user => {
             return {
               id: user.id,

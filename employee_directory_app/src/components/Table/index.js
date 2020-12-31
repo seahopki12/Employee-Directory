@@ -1,17 +1,23 @@
-import React from "react";
-import Container from "../Container";
-import Row from "../Row";
-import LoginCol from "../LoginCol";
+import React, { useContext } from "react";
+import UserContext from "../../utils/UserContext";
 
 
 function Table() {
+    const { users } = useContext(UserContext);
     return (
         <div>
-            <Container>
-                <Row>
-                    <LoginCol />
-                </Row>
-            </Container>
+            <div className="container-md">
+                {users.map(user => {
+                    return (
+                        <div className="row">
+                            <div className="col-md-3">{user.id}</div>
+                            <div className="col-md-3">{user.login}</div>
+                            <div className="col-md-3">{user.url}</div>
+                            <div className="col-md-3">{user.type}</div>
+                        </div>
+                    )
+                })}
+            </div>
         </div>
     );
 };
