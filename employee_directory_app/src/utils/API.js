@@ -2,7 +2,8 @@ import axios from "axios";
 
 // Export an object containing methods we'll use for accessing the random user API
 
-  function getUsers() {
+export default {
+  getUsers: () => {
     return new Promise((resolve, reject) => {
       axios
         .get("https://api.github.com/orgs/github/public_members")
@@ -11,14 +12,15 @@ import axios from "axios";
           console.log(res.data);
           const results = users.map(user => {
             return {
+              id: user.id,
               login: user.login,
-              image: user.avatar_url
+              url: user.html_url,
+              type: user.type
             };
           });
           resolve(results);
         })
         .catch(err => reject(err));
     });
-  };
-
-  export default getUsers();
+  }
+};
