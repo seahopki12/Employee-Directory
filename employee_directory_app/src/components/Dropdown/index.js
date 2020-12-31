@@ -1,5 +1,4 @@
 import React from "react";
-import ListItem from "../ListItem";
 
 function Dropdown(props) {
     const name = props.dropdownName;
