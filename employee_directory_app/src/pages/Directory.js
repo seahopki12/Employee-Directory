@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import UserContext from "../utils/UserContext";
 import API from "../utils/API";
+import UserContext from "../utils/UserContext";
 import Dropdowns from "../components/Dropdowns";
 import Table from "../components/Table";
 
@@ -11,7 +11,7 @@ function Directory() {
 
     useEffect(() => {
         loadUsers();
-    });
+    }, []);
 
     function loadUsers() {
         API.getUsers()
