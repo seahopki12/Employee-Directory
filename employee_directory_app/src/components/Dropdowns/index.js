@@ -2,34 +2,37 @@ import React from "react";
 import Container from "../Container";
 import Row from "../Row";
 import Col from "../Col";
+import Dropdown from "react-bootstrap/Dropdown";
 
 function Dropdowns() {
     return (
         <Container>
             <Row>
                 <Col size="6">
-                    <div className="btn-group">
-                        <button className="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Filter By
-                        </button>
-                        <ul className="dropdown-menu">
-                            <li><button className="dropdown-item">ID</button></li>
-                            <li><button className="dropdown-item">Login</button></li>
-                            <li><button className="dropdown-item">URL</button></li>
-                            <li><button className="dropdown-item">Type</button></li>
-                        </ul>
-                    </div>
+                    <Dropdown>
+                        <Dropdown.Toggle variant="success" id="dropdown-basic">
+                            Dropdown Button
+                        </Dropdown.Toggle>
+
+                        <Dropdown.Menu>
+                            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
                 </Col>
                 <Col size="6">
-                    <div className="btn-group">
-                        <button className="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Sort By
-                        </button>
-                        <ul className="dropdown-menu">
-                            <li>Login Ascending</li>
-                            <li>Login Descending</li>
-                        </ul>
-                    </div>
+                <Dropdown>
+                        <Dropdown.Toggle variant="success" id="dropdown-basic">
+                            Dropdown Button
+                        </Dropdown.Toggle>
+
+                        <Dropdown.Menu>
+                            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
                 </Col>
             </Row>
         </Container>
