@@ -4,6 +4,8 @@ import Row from "../Row";
 import Col from "../Col";
 import Dropdown from "react-bootstrap/Dropdown";
 import UserContext from "../../utils/UserContext";
+import InputGroup from "react-bootstrap/InputGroup";
+import FormControl from "react-bootstrap/FormControl";
 
 function Dropdowns() {
     const { sortByIdAsc, sortByIdDesc, sortByLoginAsc, sortByLoginDesc } = useContext(UserContext);
@@ -12,20 +14,18 @@ function Dropdowns() {
         <Container>
             <Row>
                 <Col size="6">
-                    <Dropdown>
-                        <Dropdown.Toggle variant="success" id="dropdown-basic">
-                            Filter By
-                        </Dropdown.Toggle>
-
-                        <Dropdown.Menu>
-                            <Dropdown.Item>ID</Dropdown.Item>
-                            <Dropdown.Item>Login</Dropdown.Item>
-                            <Dropdown.Item>URL</Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
+                    <InputGroup className="mb-3">
+                        <InputGroup.Prepend>
+                            <InputGroup.Text id="inputGroup-sizing-default">Default</InputGroup.Text>
+                        </InputGroup.Prepend>
+                        <FormControl
+                            aria-label="Default"
+                            aria-describedby="inputGroup-sizing-default"
+                        />
+                    </InputGroup>
                 </Col>
                 <Col size="6">
-                <Dropdown>
+                    <Dropdown>
                         <Dropdown.Toggle variant="success" id="dropdown-basic">
                             Sort By
                         </Dropdown.Toggle>
