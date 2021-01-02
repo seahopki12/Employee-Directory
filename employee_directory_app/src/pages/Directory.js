@@ -22,8 +22,24 @@ function Directory() {
             .catch(err => console.log(err));
     };
 
+    // function sortByLoginAsc () {
+    //     users.sort();
+    // };
+
+    // function sortByLoginDesc () {
+    //     users.reverse();
+    // };
+
+    function sortByIdAsc () {
+        setUsers([...users].sort((a,b) => a.id - b.id));
+    };
+
+    function sortByIdDesc () {
+        setUsers([...users].sort((a,b) => b.id - a.id));
+    };
+
     return (
-        <UserContext.Provider value={{ user, users}}>
+        <UserContext.Provider value={{ user, users, sortByIdAsc, sortByIdDesc}}>
             <div>
                 <Dropdowns />
                 <Table />

@@ -3,7 +3,8 @@ import React from "react";
 const UserContext = React.createContext({
   user: {},
   users: [],
-  createTable: () => {}
+  sortByIdAsc: () => {},
+  sortByIdDesc: () => {}
 });
 
 export default UserContext;

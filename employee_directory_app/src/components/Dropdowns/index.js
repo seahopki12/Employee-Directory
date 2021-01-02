@@ -6,27 +6,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import UserContext from "../../utils/UserContext";
 
 function Dropdowns() {
-    const { users } = useContext(UserContext);
-
-    function sortByLoginAsc () {
-        users.sort();
-    };
-
-    function sortByLoginDesc () {
-        users.reverse();
-    };
-
-    function sortByIdAsc () {
-        users.sort((a,b) => {
-            return a.id - b.id;
-        });
-    };
-
-    function sortByIdDesc () {
-        users.sort((a,b) => {
-            return b.id - a.id;
-        });
-    };
+    const { sortByIdAsc, sortByIdDesc, sortByLoginAsc, sortByLoginDesc } = useContext(UserContext);
 
     return (
         <Container>
