@@ -4,7 +4,9 @@ const UserContext = React.createContext({
   user: {},
   users: [],
   sortByIdAsc: () => {},
-  sortByIdDesc: () => {}
+  sortByIdDesc: () => {},
+  sortByLoginAsc: () => {},
+  sortByLoginDesc: () => {}
 });
 
 export default UserContext;

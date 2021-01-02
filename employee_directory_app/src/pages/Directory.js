@@ -22,24 +22,48 @@ function Directory() {
             .catch(err => console.log(err));
     };
 
-    // function sortByLoginAsc () {
-    //     users.sort();
-    // };
+    function objAsc(a, b) {
+        const bandA = a.login.toUpperCase();
+        const bandB = b.login.toUpperCase();
+        let comparison = 0;
+        if (bandA > bandB) {
+            comparison = 1;
+        } else if (bandA < bandB) {
+            comparison = -1;
+        }
+        return comparison;
+    }
 
-    // function sortByLoginDesc () {
-    //     users.reverse();
-    // };
+    function objDesc(a, b) {
+        const bandA = a.login.toUpperCase();
+        const bandB = b.login.toUpperCase();
+        let comparison = 0;
+        if (bandA > bandB) {
+            comparison = 1;
+        } else if (bandA < bandB) {
+            comparison = -1;
+        }
+        return comparison * -1;
+    }
 
-    function sortByIdAsc () {
-        setUsers([...users].sort((a,b) => a.id - b.id));
+    function sortByLoginAsc() {
+        setUsers([...users].sort(objAsc));
     };
 
-    function sortByIdDesc () {
-        setUsers([...users].sort((a,b) => b.id - a.id));
+    function sortByLoginDesc() {
+        setUsers([...users].sort(objDesc));
+    };
+
+    function sortByIdAsc() {
+        setUsers([...users].sort((a, b) => a.id - b.id));
+    };
+
+    function sortByIdDesc() {
+        setUsers([...users].sort((a, b) => b.id - a.id));
     };
 
     return (
-        <UserContext.Provider value={{ user, users, sortByIdAsc, sortByIdDesc}}>
+        <UserContext.Provider value={{ user, users, sortByIdAsc, sortByIdDesc, sortByLoginAsc, sortByLoginDesc }}>
             <div>
                 <Dropdowns />
                 <Table />
