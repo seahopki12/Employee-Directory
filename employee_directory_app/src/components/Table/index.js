@@ -19,7 +19,7 @@ function Table() {
                             </div>
                         );
                     })
-        }
+                }
             </div>
         </div>
     );
