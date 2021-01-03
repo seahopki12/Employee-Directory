@@ -4,25 +4,20 @@ import Row from "../Row";
 import Col from "../Col";
 import Dropdown from "react-bootstrap/Dropdown";
 import UserContext from "../../utils/UserContext";
-import InputGroup from "react-bootstrap/InputGroup";
-import FormControl from "react-bootstrap/FormControl";
+import Form from "react-bootstrap/Form";
 
 function Dropdowns() {
-    const { sortByIdAsc, sortByIdDesc, sortByLoginAsc, sortByLoginDesc } = useContext(UserContext);
+    const { sortByIdAsc, sortByIdDesc, sortByLoginAsc, sortByLoginDesc, search, handleInputChange } = useContext(UserContext);
 
     return (
         <Container>
             <Row>
                 <Col size="6">
-                    <InputGroup className="mb-3">
-                        <InputGroup.Prepend>
-                            <InputGroup.Text id="inputGroup-sizing-default">Default</InputGroup.Text>
-                        </InputGroup.Prepend>
-                        <FormControl
-                            aria-label="Default"
-                            aria-describedby="inputGroup-sizing-default"
-                        />
-                    </InputGroup>
+                    <Form>
+                        <Form.Group controlId="formBasicEmail">
+                            <Form.Control type="email" placeholder="Filter users by login" value={search} onChange={handleInputChange}/>
+                        </Form.Group>
+                    </Form>
                 </Col>
                 <Col size="6">
                     <Dropdown>

@@ -7,6 +7,7 @@ import Table from "../components/Table";
 function Directory() {
     const [users, setUsers] = useState([]);
     const [user, setUser] = useState({});
+    const [search, setSearch] = useState("");
     // const [userIndex, setUserIndex] = useState(0);
 
     useEffect(() => {
@@ -62,8 +63,20 @@ function Directory() {
         setUsers([...users].sort((a, b) => b.id - a.id));
     };
 
+    function handleInputChange (event) {
+        setSearch(event.target.value);
+        filterByLogin();
+      };
+
+    function filterByLogin() {
+        setUsers([...users].filter(e => {
+            // return e.login.toLowerCase().includes(search.toLowerCase());
+            return e.login.toLowerCase().indexOf(search.toLowerCase()) !== -1;
+        }));
+    } 
+
     return (
-        <UserContext.Provider value={{ user, users, sortByIdAsc, sortByIdDesc, sortByLoginAsc, sortByLoginDesc }}>
+        <UserContext.Provider value={{ user, users, sortByIdAsc, sortByIdDesc, sortByLoginAsc, sortByLoginDesc, search, handleInputChange }}>
             <div>
                 <Dropdowns />
                 <Table />

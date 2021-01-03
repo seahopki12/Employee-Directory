@@ -6,7 +6,9 @@ const UserContext = React.createContext({
   sortByIdAsc: () => {},
   sortByIdDesc: () => {},
   sortByLoginAsc: () => {},
-  sortByLoginDesc: () => {}
+  sortByLoginDesc: () => {},
+  search: "",
+  filterByLogin: () => {}
 });
 
 export default UserContext;
